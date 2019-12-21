@@ -21,7 +21,12 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Booster Pack</h2>
+      <header>
+        <h2>Booster Pack</h2>
+      </header>
+      <div className="filters">
+        Filter Options:
+      </div>
       {booster.map(card => (
         <Card 
           key={card.number} 
@@ -29,6 +34,7 @@ function App() {
           image={card.imageUrl}
         />
       ))}
+      <footer>By Ethan Fiddes</footer>
     </div>
   );
 }
