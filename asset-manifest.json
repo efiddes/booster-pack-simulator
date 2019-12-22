@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/booster-pack-simulator/static/css/main.4c7e05f7.chunk.css",
-    "main.js": "/booster-pack-simulator/static/js/main.3ad5c854.chunk.js",
-    "main.js.map": "/booster-pack-simulator/static/js/main.3ad5c854.chunk.js.map",
+    "main.css": "/booster-pack-simulator/static/css/main.fd04426b.chunk.css",
+    "main.js": "/booster-pack-simulator/static/js/main.dabcd350.chunk.js",
+    "main.js.map": "/booster-pack-simulator/static/js/main.dabcd350.chunk.js.map",
     "runtime-main.js": "/booster-pack-simulator/static/js/runtime-main.e6bd7cd4.js",
     "runtime-main.js.map": "/booster-pack-simulator/static/js/runtime-main.e6bd7cd4.js.map",
-    "static/js/2.33a6fa9c.chunk.js": "/booster-pack-simulator/static/js/2.33a6fa9c.chunk.js",
-    "static/js/2.33a6fa9c.chunk.js.map": "/booster-pack-simulator/static/js/2.33a6fa9c.chunk.js.map",
+    "static/js/2.591fb635.chunk.js": "/booster-pack-simulator/static/js/2.591fb635.chunk.js",
+    "static/js/2.591fb635.chunk.js.map": "/booster-pack-simulator/static/js/2.591fb635.chunk.js.map",
     "index.html": "/booster-pack-simulator/index.html",
-    "precache-manifest.a951c0ac9384fcd93659527d92af781c.js": "/booster-pack-simulator/precache-manifest.a951c0ac9384fcd93659527d92af781c.js",
+    "precache-manifest.7a1316f1a85440b67b15e7bbb74cd551.js": "/booster-pack-simulator/precache-manifest.7a1316f1a85440b67b15e7bbb74cd551.js",
     "service-worker.js": "/booster-pack-simulator/service-worker.js",
-    "static/css/main.4c7e05f7.chunk.css.map": "/booster-pack-simulator/static/css/main.4c7e05f7.chunk.css.map",
-    "static/js/2.33a6fa9c.chunk.js.LICENSE": "/booster-pack-simulator/static/js/2.33a6fa9c.chunk.js.LICENSE",
-    "static/media/mtg-back.jpg": "/booster-pack-simulator/static/media/mtg-back.2ca7bd5a.jpg"
+    "static/css/main.fd04426b.chunk.css.map": "/booster-pack-simulator/static/css/main.fd04426b.chunk.css.map",
+    "static/js/2.591fb635.chunk.js.LICENSE": "/booster-pack-simulator/static/js/2.591fb635.chunk.js.LICENSE",
+    "static/media/mtg-back.jpg": "/booster-pack-simulator/static/media/mtg-back.dd611d53.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.e6bd7cd4.js",
-    "static/js/2.33a6fa9c.chunk.js",
-    "static/css/main.4c7e05f7.chunk.css",
-    "static/js/main.3ad5c854.chunk.js"
+    "static/js/2.591fb635.chunk.js",
+    "static/css/main.fd04426b.chunk.css",
+    "static/js/main.dabcd350.chunk.js"
   ]
 }
