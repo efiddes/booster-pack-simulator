@@ -13,15 +13,10 @@ function App() {
   }, []);
 
   const getBooster = async () => {
-    //booster api call is inadequate 
-    //const response = await fetch('https://api.magicthegathering.io/v1/sets/war/booster');
-
     let set = 'war';
     let rarity = Math.random() > 0.125 ? 'rare' : 'mythic';
 
-
     const rare = await fetch(`https://api.magicthegathering.io/v1/cards?set=${set}&rarity=${rarity}&pageSize=1&random=true&contains=imageUrl`);
-    console.log(`https://api.magicthegathering.io/v1/cards?set=${set}&rarity=${rarity}&pageSize=1&random=true&contains=imageUrl`);
     const uncommon = await fetch(`https://api.magicthegathering.io/v1/cards?set=${set}&rarity=uncommon&pageSize=3&random=true&contains=imageUrl`);
     const common = await fetch(`https://api.magicthegathering.io/v1/cards?set=${set}&rarity=common&pageSize=10&random=true&contains=imageUrl`);
     const basic = await fetch(`https://api.magicthegathering.io/v1/cards?set=${set}&type=basic&pageSize=1&random=true&contains=imageUrl`);
@@ -36,10 +31,7 @@ function App() {
     console.log(commons.cards);
     console.log(basics.cards);
 
-    //setBooster(rares.cards);
     setBooster([...rares.cards, ...uncommons.cards, ...commons.cards, ...basics.cards]);
-    //setBooster(commons.cards);
-    //setBooster(basics.cards);
   }
 
   return (
