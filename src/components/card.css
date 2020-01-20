@@ -1,5 +1,5 @@
 .image.hover:hover {
-  border-radius: 5%;
+  border-radius: 4%;
   cursor: pointer;
   animation: pulse 2s ease-in-out infinite;
 }
