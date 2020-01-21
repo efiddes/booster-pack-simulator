@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import './App.css';
 import Card from './components/Card';
+import Filter from './components/Filter';
 
 function App() {
 
@@ -39,9 +40,7 @@ function App() {
       <header>
         <h2>Booster Pack Simulator</h2>
       </header>
-      <div className="filters">
-        Filter Options:
-      </div>
+      <Filter/>
       {booster.map(card => (
         <Card 
           key={card.number} 
