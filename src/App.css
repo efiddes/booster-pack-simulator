@@ -26,6 +26,5 @@ footer {
 }
 
 .filters {
-background-color: lightslategray;
     grid-area: 2 / 6 / span 3;
 }
