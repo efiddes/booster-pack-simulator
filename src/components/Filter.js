@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-const Filter = ({name, image, number}) => {
+const Filter = () => {
 
     return (
         <div className="filters">
