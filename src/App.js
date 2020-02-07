@@ -3,14 +3,17 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Card from './components/Card';
 import Filter from './components/Filter';
+import Loader from './components/Loader';
 
 function App() {
 
+  const [loading, setLoading] = useState(true);
   const [booster, setBooster] = useState([]);
 
   useEffect(() => {
     getBooster();
     console.log('Effect has been run');
+    console.log(loading);
   }, []);
 
   const getBooster = async () => {
@@ -33,6 +36,7 @@ function App() {
     console.log(basics.cards);
 
     setBooster([...rares.cards, ...uncommons.cards, ...commons.cards, ...basics.cards]);
+    setLoading(false);
   }
 
   return (
@@ -41,7 +45,7 @@ function App() {
         <h2>Booster Pack Simulator</h2>
       </header>
       <Filter/>
-      {booster.map(card => (
+      {loading ? <Loader/> : booster.map(card => (
         <Card 
           key={card.number} 
           name={card.name} 

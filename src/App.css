@@ -28,3 +28,7 @@ footer {
 .filters {
     grid-area: 2 / 6 / span 3;
 }
+
+.loader {
+  grid-area: 3 / 3 / span 1 / span 1;
+}
