@@ -21,6 +21,7 @@
 
 .filter-list li input[type="text"] {
     width: 2rem;
+    cursor: not-allowed;
 } 
 
 input[type="checkbox"] {
