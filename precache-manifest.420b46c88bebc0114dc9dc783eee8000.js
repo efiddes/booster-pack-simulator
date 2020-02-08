@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "961ece5d7b43039b8d0a2588b7121ca4",
+    "revision": "d056e51c3430b5922c7da9656c4222fe",
     "url": "/booster-pack-simulator/index.html"
   },
   {

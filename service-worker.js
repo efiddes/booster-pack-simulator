@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/booster-pack-simulator/precache-manifest.c2a419dc94ec3ca20f996ef3782b5838.js"
+  "/booster-pack-simulator/precache-manifest.420b46c88bebc0114dc9dc783eee8000.js"
 );
 
 self.addEventListener('message', (event) => {
