@@ -5,9 +5,19 @@ import './filter.css';
 
 const Filter = () => {
 
+    const standard = ["grn", "rna", "war", "m20", "eld", "thb"];
+
     return (
         <div className="filters">
             <h3>Filter Options:</h3>
+            <div className="filter-set">
+            {standard.map( (set, index) => (
+                <label for={set}>
+                    <input type="radio" id={set} name="sets"></input>
+                    <i className={"ss ss-" + set + " ss-4x"}></i>
+                </label>
+            ))}
+            </div>
             <ul className="filter-list">
                 <li>
                     <input type="checkbox" name="rares" defaultChecked/>

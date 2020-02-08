@@ -19,6 +19,37 @@
     align-items: center;
 }
 
+.filter-set {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.filter-set > label {
+  text-align: center;
+}
+
+/* HIDE RADIO */
+[type="radio"] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type="radio"] + i {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type="radio"]:checked + i {
+  text-shadow: -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
 .filter-list li input[type="text"] {
     width: 2rem;
     cursor: not-allowed;
