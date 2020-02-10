@@ -7,6 +7,7 @@ import Loader from './components/Loader';
 
 function App() {
 
+  const standard = ["grn", "rna", "war", "m20", "eld"]; //, "thb"];
   const [loading, setLoading] = useState(true);
   const [booster, setBooster] = useState([]);
 
@@ -14,10 +15,11 @@ function App() {
     getBooster();
     console.log('Effect has been run');
     console.log(loading);
+    console.log(standard[standard.length-1]);
   }, []);
 
   const getBooster = async () => {
-    let set = 'war';
+    let set = standard[standard.length-1];
     let rarity = Math.random() > 0.125 ? 'rare' : 'mythic';
 
     const rare = await fetch(`https://api.magicthegathering.io/v1/cards?set=${set}&rarity=${rarity}&pageSize=1&random=true&contains=imageUrl`);
@@ -44,7 +46,7 @@ function App() {
       <header>
         <h2>Booster Pack Simulator</h2>
       </header>
-      <Filter/>
+      <Filter standard={standard}/>
       {loading ? <Loader/> : booster.map(card => (
         <Card 
           key={card.number} 
