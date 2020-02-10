@@ -2,21 +2,25 @@ import React, { useState } from 'react';
 
 import './filter.css';
 
-
-const Filter = () => {
-
-    const standard = ["grn", "rna", "war", "m20", "eld", "thb"];
+const Filter = ({standard}) => {
 
     return (
         <div className="filters">
             <h3>Filter Options:</h3>
             <div className="filter-set">
-            {standard.map( (set, index) => (
-                <label for={set}>
-                    <input type="radio" id={set} name="sets"></input>
-                    <i className={"ss ss-" + set + " ss-4x"}></i>
-                </label>
-            ))}
+            {standard.map( (set, index, arr) => {
+                if (arr.length - 1 === index) {
+                    return <label for={set}>
+                        <input type="radio" id={set} name="sets" checked></input>
+                        <i className={"ss ss-" + set + " ss-4x"}></i>
+                    </label>
+                } else {
+                    return <label for={set}>
+                        <input type="radio" id={set} name="sets"></input>
+                        <i className={"ss ss-" + set + " ss-4x"}></i>
+                    </label>
+                }
+            })}
             </div>
             <ul className="filter-list">
                 <li>
