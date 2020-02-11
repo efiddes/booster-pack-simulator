@@ -2,48 +2,81 @@ import React, { useState } from 'react';
 
 import './filter.css';
 
+const INITIAL_STATE = {rare: true,
+    uncommon: true,
+    common: true,
+    basic: true}
+
 const Filter = ({standard}) => {
 
+    const [boosterSet, setBoosterSet] = useState("eld");
+    const [quantityOf, setQuantityOf] = useState([
+        {rarity: "rare", quantity: 1, checked: true},
+        {rarity: "uncommon", quantity: 3, checked: true},
+        {rarity: "common", quantity: 10, checked: true},
+        {rarity: "basic", quantity: 1, checked: true}
+    ]);
+
+    const [values, setValues] = useState(INITIAL_STATE);
+    
+    function handleSubmit(event) {
+        event.preventDefault();
+        console.log("Off we go!", boosterSet); 
+    }
+    
+    function handleChange(evt) {
+        console.log("new value", evt.target.name, values[evt.target.name]); // "rare"
+
+        setValues({
+            ...values,
+            [evt.target.name]: !values[evt.target.name] 
+        });
+
+        console.log(values);
+    }
+    
     return (
         <div className="filters">
-            <h3>Filter Options:</h3>
-            <div className="filter-set">
-            {standard.map( (set, index, arr) => {
-                if (arr.length - 1 === index) {
-                    return <label for={set}>
-                        <input type="radio" id={set} name="sets" checked></input>
+            <form onSubmit={handleSubmit}>
+                <h3>Filter Options:</h3>
+                <div className="filter-set">
+                {standard.map( (set) => (
+                    <label key={set} htmlFor={set}>
+                        <input type="radio"
+                            id={set} 
+                            name="sets"
+                            value={set}
+                            onChange={() => setBoosterSet(set)}
+                            defaultChecked={boosterSet === set}
+                        />
                         <i className={"ss ss-" + set + " ss-4x"}></i>
                     </label>
-                } else {
-                    return <label for={set}>
-                        <input type="radio" id={set} name="sets"></input>
-                        <i className={"ss ss-" + set + " ss-4x"}></i>
-                    </label>
-                }
-            })}
-            </div>
-            <ul className="filter-list">
-                <li>
-                    <input type="checkbox" name="rares" defaultChecked/>
-                    <label for="rares">Mythics &amp; Rares</label>
-                    <input type="text" name="rare-quant" value="1" disabled/>
-                </li>
-                <li>
-                    <input type="checkbox" name="rares" defaultChecked/>
-                    <label for="rares">Uncommons</label>
-                    <input type="text" name="uncommon-quant" value="3" disabled/>
-                </li>
-                <li>
-                    <input type="checkbox" name="rares" defaultChecked/>
-                    <label for="rares">Commons</label>
-                    <input type="text" name="common-quant" value="10" disabled/>
-                </li>
-                <li>
-                    <input type="checkbox" name="rares" defaultChecked/>
-                    <label for="rares">Basic Lands</label>
-                    <input type="text" name="basic-quant" value="1" disabled/>
-                </li>
-            </ul> 
+                ))}
+                </div>
+
+                <ul className="filter-list">
+                    {quantityOf.map( (item, index) => (
+                        <li key={item.rarity}>
+                            <input type="checkbox"
+                                index={index}
+                                name={item.rarity}
+                                onChange={handleChange}
+                                checked={values[item.rarity]} 
+                            />
+                            <label htmlFor={item.rarity}>
+                                {item.rarity.charAt(0).toUpperCase() + item.rarity.slice(1)}
+                            </label>
+                            <input type="text"
+                                name={item.rarity + "-quant"} 
+                                value={item.quantity} 
+                                disabled={true}
+                            />
+                        </li>
+                    ))}
+                </ul>
+
+                <button type="submit">New Booster</button> 
+            </form>
         </div>
     )
 }
