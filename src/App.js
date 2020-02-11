@@ -4,42 +4,24 @@ import './App.css';
 import Card from './components/Card';
 import Filter from './components/Filter';
 import Loader from './components/Loader';
+import GenerateBooster from './calls/booster.js';
 
 function App() {
 
   const standard = ["grn", "rna", "war", "m20", "eld"]; //, "thb"];
   const [loading, setLoading] = useState(true);
   const [booster, setBooster] = useState([]);
+  let quantityOf = { 
+    mythic: 0,
+    rare: 1,
+    uncommon: 3,
+    common: 10,
+    basic: 1 
+  };
 
   useEffect(() => {
-    getBooster();
-    console.log('Effect has been run');
-    console.log(loading);
-    console.log(standard[standard.length-1]);
+    GenerateBooster("eld", quantityOf, setBooster, setLoading);
   }, []);
-
-  const getBooster = async () => {
-    let set = standard[standard.length-1];
-    let rarity = Math.random() > 0.125 ? 'rare' : 'mythic';
-
-    const rare = await fetch(`https://api.magicthegathering.io/v1/cards?set=${set}&rarity=${rarity}&pageSize=1&random=true&contains=imageUrl`);
-    const uncommon = await fetch(`https://api.magicthegathering.io/v1/cards?set=${set}&rarity=uncommon&pageSize=3&random=true&contains=imageUrl`);
-    const common = await fetch(`https://api.magicthegathering.io/v1/cards?set=${set}&rarity=common&pageSize=10&random=true&contains=imageUrl`);
-    const basic = await fetch(`https://api.magicthegathering.io/v1/cards?set=${set}&type=basic&pageSize=1&random=true&contains=imageUrl`);
-    
-    const rares = await rare.json();
-    const uncommons = await uncommon.json();
-    const commons = await common.json();
-    const basics = await basic.json();
-
-    console.log(rares.cards);
-    console.log(uncommons.cards);
-    console.log(commons.cards);
-    console.log(basics.cards);
-
-    setBooster([...rares.cards, ...uncommons.cards, ...commons.cards, ...basics.cards]);
-    setLoading(false);
-  }
 
   return (
     <div className="App">
