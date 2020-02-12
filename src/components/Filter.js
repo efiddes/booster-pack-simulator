@@ -2,37 +2,25 @@ import React, { useState } from 'react';
 
 import './filter.css';
 
-const INITIAL_STATE = {rare: true,
-    uncommon: true,
-    common: true,
-    basic: true}
-
 const Filter = ({standard}) => {
 
     const [boosterSet, setBoosterSet] = useState("eld");
-    const [quantityOf, setQuantityOf] = useState([
+    const [quantity, setQuantity] = useState([
         {rarity: "rare", quantity: 1, checked: true},
         {rarity: "uncommon", quantity: 3, checked: true},
         {rarity: "common", quantity: 10, checked: true},
         {rarity: "basic", quantity: 1, checked: true}
     ]);
-
-    const [values, setValues] = useState(INITIAL_STATE);
     
     function handleSubmit(event) {
         event.preventDefault();
-        console.log("Off we go!", boosterSet); 
+        console.log("Submitting values", {boosterSet, quantity}); 
+
+        return { boosterSet, quantity }
     }
     
     function handleChange(evt) {
-        console.log("new value", evt.target.name, values[evt.target.name]); // "rare"
-
-        setValues({
-            ...values,
-            [evt.target.name]: !values[evt.target.name] 
-        });
-
-        console.log(values);
+        setQuantity(quantity.map((item, index) => index === parseInt(evt.currentTarget.getAttribute('index')) ? { ...item, checked: !item.checked} : item));
     }
     
     return (
@@ -55,13 +43,13 @@ const Filter = ({standard}) => {
                 </div>
 
                 <ul className="filter-list">
-                    {quantityOf.map( (item, index) => (
+                    {quantity.map( (item, index) => (
                         <li key={item.rarity}>
                             <input type="checkbox"
                                 index={index}
                                 name={item.rarity}
                                 onChange={handleChange}
-                                checked={values[item.rarity]} 
+                                checked={item.checked} 
                             />
                             <label htmlFor={item.rarity}>
                                 {item.rarity.charAt(0).toUpperCase() + item.rarity.slice(1)}
@@ -75,7 +63,7 @@ const Filter = ({standard}) => {
                     ))}
                 </ul>
 
-                <button type="submit">New Booster</button> 
+                <button /*disabled={loading}*/ type="submit">New Booster</button> 
             </form>
         </div>
     )
