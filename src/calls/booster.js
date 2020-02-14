@@ -1,32 +1,33 @@
-const GenerateBooster = async (set, quantityOf, setBooster, setLoading) => {
+import {useState, useEffect } from 'react';
 
-    const url = "https://api.magicthegathering.io/v1/";
-    let result, booster = [];
+export const useGenerateCards = (urls, dependencies) => {
 
-    // 12.5% chance to get a rare instead of a mythic
-    if (quantityOf["rare"] > 0 ) {
-        for ( let i = 0, length = quantityOf["rare"]; i < length; i++) {
-            if (Math.random() < 0.125) {
-                quantityOf["rare"]--;
-                quantityOf["mythic"]++;
-            }
-        }
-    }
+    const [isLoading, setIsLoading] = useState(true);
+    const [fetchedData, setFetchedData] = useState([]);
     
-    for (let rarity in quantityOf) {
-        if (quantityOf[rarity] === 0) {
-            continue;
-        }
-         else if (rarity === "basic") {
-            result = await fetch(`${url}cards?set=${set}&type=${rarity}&pageSize=${quantityOf[rarity]}&random=true&contains=imageUrl`);
-        } else {
-            result = await fetch(`${url}cards?set=${set}&rarity=${rarity}&pageSize=${quantityOf[rarity]}&random=true&contains=imageUrl`);
-        }
-        booster = [...booster, ...(await result.json()).cards];
-    }
+    // fetch('https://api.magicthegathering.io/v1/cards?set=eld&rarity=$rare&pageSize=1&random=true&contains=imageUrl";
+    useEffect(() => {
+        setIsLoading(true);
+        (async function getCards() {
+            Promise.all(urls.map(url =>
+                fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                    throw new Error('Failed to fetch.');
+                    }
+                    return response.json();
+                })
+            ))
+            .then(data => {
+                setFetchedData(data);
+                setIsLoading(false);
+            })
+            .catch(err => {
+                console.log(err);
+                setIsLoading(false);
+            })
+        })()
+    }, dependencies);
 
-    setBooster(booster);
-    setLoading(false);
-}
-
-export default GenerateBooster;
+    return [isLoading, fetchedData];
+};
