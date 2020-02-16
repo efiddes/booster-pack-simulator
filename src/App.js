@@ -16,22 +16,7 @@ function App() {
     {type: 'basic' , pageSize: 1}
   ];
 
-  let urls = [];
-
-  booster.forEach(obj => {
-    let names = Object.getOwnPropertyNames(obj);
-    let values = Object.values(obj);
-    let url = `https://api.magicthegathering.io/v1/cards?set=${standard[standard.length -1]}`;
-
-    for (let i = 0; i < names.length; i++) {
-      url +=`&${names[i]}=${values[i]}`;
-    }
-
-    url += "&random=true&contains=imageUrl";
-    urls.push(url);
-  });
-
-  const [isLoading, fetchedData] = useGenerateCards(urls, []);
+  const [isLoading, fetchedData] = useGenerateCards(standard[standard.length -1], booster, []);
   
   return (
     <div className="App">
