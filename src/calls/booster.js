@@ -1,14 +1,16 @@
-import {useState, useEffect } from 'react';
+import {useState, useEffect, useContext } from 'react';
+import { LoadingContext } from '../contexts/LoadingContext';
 
-export const useGenerateCards = (set, booster, dependencies) => {
+export const useGenerateCards = (boosterPack, dependencies) => {
 
-    const [isLoading, setIsLoading] = useState(true);
     const [fetchedData, setFetchedData] = useState([]);
+    const { setIsLoading } = useContext(LoadingContext);
     
+    let set = boosterPack.set;
     let urls = [];
 
     // Remove isRequest false objects
-    booster.filter(quantity => quantity.isRequested || quantity.pageSize === 0).forEach(obj => {
+    (boosterPack.booster).filter(quantity => quantity.isRequested || quantity.pageSize === 0).forEach(obj => {
         let names = Object.getOwnPropertyNames(obj);
         let values = Object.values(obj);
         let url = `https://api.magicthegathering.io/v1/cards?set=${set}`;
@@ -37,26 +39,28 @@ export const useGenerateCards = (set, booster, dependencies) => {
     // fetch('https://api.magicthegathering.io/v1/cards?set=eld&rarity=$rare&pageSize=1&random=true&contains=imageUrl');
     useEffect(() => {
         setIsLoading(true);
-        (async function getCards() {
-            Promise.all(urls.map(url =>
-                fetch(url)
-                .then(response => {
-                    if (!response.ok) {
-                    throw new Error('Failed to fetch.');
-                    }
-                    return response.json();
+        if (Array.isArray(urls) && urls.length) {
+            (async function getCards() {
+                Promise.all(urls.map(url =>
+                    fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                        throw new Error('Failed to fetch.');
+                        }
+                        return response.json();
+                    })
+                ))
+                .then(data => {
+                    setFetchedData(data);
+                    setIsLoading(false);
                 })
-            ))
-            .then(data => {
-                setFetchedData(data);
-                setIsLoading(false);
-            })
-            .catch(err => {
-                console.log(err);
-                setIsLoading(false);
-            })
-        })()
+                .catch(err => {
+                    console.log(err);
+                    setIsLoading(false);
+                })
+            })()
+        }
     }, dependencies);
 
-    return [isLoading, fetchedData];
+    return fetchedData;
 };
