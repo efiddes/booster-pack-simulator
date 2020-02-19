@@ -1,26 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
+import { BoosterContext } from '../contexts/BoosterContext';
 import './filter.css';
 
-const Filter = ({standard}) => {
+const Filter = () => {
+    const { standard, booster, updateRequested } = useContext(BoosterContext);
+    const [boosterSet, setBoosterSet] = useState(standard[standard.length -1]);
 
-    const [boosterSet, setBoosterSet] = useState("eld");
-    const [quantity, setQuantity] = useState([
-        {rarity: "rare", quantity: 1, checked: true},
-        {rarity: "uncommon", quantity: 3, checked: true},
-        {rarity: "common", quantity: 10, checked: true},
-        {rarity: "basic", quantity: 1, checked: true}
-    ]);
-    
     function handleSubmit(event) {
         event.preventDefault();
-        console.log("Submitting values", {boosterSet, quantity}); 
-
-        return { boosterSet, quantity }
-    }
-    
-    function handleChange(evt) {
-        setQuantity(quantity.map((item, index) => index === parseInt(evt.currentTarget.getAttribute('index')) ? { ...item, checked: !item.checked} : item));
+        console.log("Submitting values", {boosterSet, booster}); 
     }
     
     return (
@@ -43,20 +32,19 @@ const Filter = ({standard}) => {
                 </div>
 
                 <ul className="filter-list">
-                    {quantity.map( (item, index) => (
+                    {booster.map( (item) => (
                         <li key={item.rarity}>
                             <input type="checkbox"
-                                index={index}
                                 name={item.rarity}
-                                onChange={handleChange}
-                                checked={item.checked} 
+                                onChange={(e) => updateRequested(e.target.name)}
+                                checked={item.isRequested} 
                             />
                             <label htmlFor={item.rarity}>
                                 {item.rarity.charAt(0).toUpperCase() + item.rarity.slice(1)}
                             </label>
                             <input type="text"
                                 name={item.rarity + "-quant"} 
-                                value={item.quantity} 
+                                value={item.pageSize} 
                                 disabled={true}
                             />
                         </li>
