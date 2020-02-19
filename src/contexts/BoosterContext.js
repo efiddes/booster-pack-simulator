@@ -11,16 +11,22 @@ const BoosterContextProvider = (props) => {
         {rarity: 'common', pageSize: 10, isRequested: true},
         {rarity: 'basic', pageSize: 1, isRequested: true}
     ]);
-
+    const [boosterPack, setBoosterPack ] = useState({set: standard[standard.length -1], booster});
+    
     const updateRequested = (rarity) => {
         let newBooster = booster.map(obj => {
             return obj.rarity === rarity ? Object.assign(obj, { isRequested: !obj.isRequested}) : obj
         });
         setBooster(newBooster);
     }
+    
+    const createBooster = (set) => {
+        setBoosterPack({ set, booster});
+        console.log("buildabooster", boosterPack);
+    }
 
     return (
-    <BoosterContext.Provider value={{standard, booster, updateRequested}}>
+        <BoosterContext.Provider value={{standard, booster, updateRequested, boosterPack, createBooster}}>
         { props.children }
     </BoosterContext.Provider>
     )
