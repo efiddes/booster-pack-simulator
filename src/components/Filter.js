@@ -1,20 +1,22 @@
 import React, { useState, useContext } from 'react';
 
 import { BoosterContext } from '../contexts/BoosterContext';
+import { LoadingContext } from '../contexts/LoadingContext';
 import './filter.css';
 
 const Filter = () => {
-    const { standard, booster, updateRequested } = useContext(BoosterContext);
+    const { standard, booster, updateRequested, createBooster } = useContext(BoosterContext);
+    const { isLoading } = useContext(LoadingContext);
     const [boosterSet, setBoosterSet] = useState(standard[standard.length -1]);
 
-    function handleSubmit(event) {
+    function HandleSubmit(event) {
         event.preventDefault();
-        console.log("Submitting values", {boosterSet, booster}); 
+        createBooster(boosterSet);
     }
     
     return (
         <div className="filters">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={HandleSubmit}>
                 <h3>Filter Options:</h3>
                 <div className="filter-set">
                 {standard.map( (set) => (
@@ -51,7 +53,7 @@ const Filter = () => {
                     ))}
                 </ul>
 
-                <button /*disabled={loading}*/ type="submit">New Booster</button> 
+                <button disabled={isLoading} type="submit">New Booster</button> 
             </form>
         </div>
     )
