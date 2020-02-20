@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/booster-pack-simulator/static/css/main.94ebc219.chunk.css",
-    "main.js": "/booster-pack-simulator/static/js/main.0b3921eb.chunk.js",
-    "main.js.map": "/booster-pack-simulator/static/js/main.0b3921eb.chunk.js.map",
+    "main.css": "/booster-pack-simulator/static/css/main.6bd3277c.chunk.css",
+    "main.js": "/booster-pack-simulator/static/js/main.d27d20f4.chunk.js",
+    "main.js.map": "/booster-pack-simulator/static/js/main.d27d20f4.chunk.js.map",
     "runtime-main.js": "/booster-pack-simulator/static/js/runtime-main.e6bd7cd4.js",
     "runtime-main.js.map": "/booster-pack-simulator/static/js/runtime-main.e6bd7cd4.js.map",
     "static/js/2.de379d1f.chunk.js": "/booster-pack-simulator/static/js/2.de379d1f.chunk.js",
     "static/js/2.de379d1f.chunk.js.map": "/booster-pack-simulator/static/js/2.de379d1f.chunk.js.map",
     "index.html": "/booster-pack-simulator/index.html",
-    "precache-manifest.6470774af673d6bdd2ec27e0bfaade3a.js": "/booster-pack-simulator/precache-manifest.6470774af673d6bdd2ec27e0bfaade3a.js",
+    "precache-manifest.1c6b5f2086890348feee23caeb0b4c2e.js": "/booster-pack-simulator/precache-manifest.1c6b5f2086890348feee23caeb0b4c2e.js",
     "service-worker.js": "/booster-pack-simulator/service-worker.js",
-    "static/css/main.94ebc219.chunk.css.map": "/booster-pack-simulator/static/css/main.94ebc219.chunk.css.map",
+    "static/css/main.6bd3277c.chunk.css.map": "/booster-pack-simulator/static/css/main.6bd3277c.chunk.css.map",
     "static/js/2.de379d1f.chunk.js.LICENSE": "/booster-pack-simulator/static/js/2.de379d1f.chunk.js.LICENSE",
     "static/media/mtg-back.jpg": "/booster-pack-simulator/static/media/mtg-back.dd611d53.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.e6bd7cd4.js",
     "static/js/2.de379d1f.chunk.js",
-    "static/css/main.94ebc219.chunk.css",
-    "static/js/main.0b3921eb.chunk.js"
+    "static/css/main.6bd3277c.chunk.css",
+    "static/js/main.d27d20f4.chunk.js"
   ]
 }
