@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './App.css';
+import reactLogo from './images/logo192.png';
 
 import Filter from './components/Filter';
 import Booster from './components/Booster';
@@ -25,7 +26,7 @@ function App() {
                 <li>By <b>Ethan Fiddes</b></li>
                 <li>
                     Built with: 
-                    <img className="react-logo" alt="built with React" src="/logo192.png"/>
+                    <img className="react-logo" alt="built with React" src={reactLogo}/>
                     <a href="https://reactjs.org" target="_blank">
                         <span className="react">React</span>
                     </a> 
