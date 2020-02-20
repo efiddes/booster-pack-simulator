@@ -1,0 +1,12 @@
+.cards-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(30%, auto);
+    background: white;
+    min-height: 85vh;
+}
+
+.loader {
+    grid-area: 1 / 1 / span 3 / span 5;
+}

@@ -9,8 +9,8 @@
 .App {
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1.5fr;
-  grid-template-rows: auto 1fr 1fr 1fr auto;
+  grid-template-columns: 5fr 1.5fr;
+  grid-auto-rows: auto;
   background: white;
   height: 100vh;
 }
@@ -20,7 +20,7 @@ header, footer {
   align-items: center;
   min-height: 50px;
   background-color: lightslategray;
-  grid-column: span 6;
+  grid-column: span 2;
 }
 
 footer {
@@ -28,9 +28,5 @@ footer {
 }
 
 .filters {
-    grid-area: 2 / 6 / span 3;
-}
-
-.loader {
-  grid-area: 3 / 3 / span 1 / span 1;
+    grid-area: 2 / 2 / span 1;
 }
