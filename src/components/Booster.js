@@ -15,7 +15,7 @@ const Booster = () => {
 
     return (   
         <div className="cards-container">
-        {isLoading && finalBooster.length ? <Loader/> : finalBooster.map(arr => (arr.cards).map(card => 
+        {isLoading ? <Loader/> : finalBooster.map(arr => (arr.cards).map(card => 
             <Card
                 key={card.number} 
                 name={card.name} 
