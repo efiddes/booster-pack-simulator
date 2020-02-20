@@ -22,7 +22,6 @@ const BoosterContextProvider = (props) => {
     
     const createBooster = (set) => {
         setBoosterPack({ set, booster});
-        console.log("buildabooster", boosterPack);
     }
 
     return (
