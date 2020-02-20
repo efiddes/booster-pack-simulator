@@ -24,6 +24,14 @@ export const useGenerateCards = (boosterPack, dependencies) => {
             else if ( values[i] === "basic" ) {
                 url +=`&type=${values[i]}`;
             } 
+            else if (names[i] === "pageSize") {
+                url +=`&${names[i]}=`;
+                /* The mtg api has an issue where it doesn't always return results that include an image
+                In order to improve my chances of always receiving enough imageUrls I am therefore inflating 
+                the requested numbers which I will then filter down.*/
+                values[i] < 10 ? url +=  values[i] * 5 : url += values[i] * 2; 
+                break;
+            } 
             else if (names[i] === "isRequested") {
                 break;
             } 
@@ -62,5 +70,36 @@ export const useGenerateCards = (boosterPack, dependencies) => {
         }
     }, dependencies);
 
-    return fetchedData;
+    const withImages = fetchedData.map(object => (object.cards).filter(card => card.hasOwnProperty('imageUrl')));
+    const finalBooster = [];
+    
+    // forEach Array in fetchedData 
+    withImages.forEach(arr => {
+        switch(arr[0].rarity) {
+            // if array  rarity = "rare" or "mythic" then then truncate array to 1
+            case 'Rare':
+            case 'Mythic':
+                finalBooster.push({cards: arr.slice(0,1)});
+                break;
+            // if array rarity = "uncommon" then truncate the array to 3
+            case 'Uncommon':
+                finalBooster.push({cards: arr.slice(0,3)});
+                break;
+            // if array rarity = "common" and when we filter out type Basic Land the array length is 0 then truncate array to 1
+            case 'Common':
+                if (!arr.filter(card => !card.supertypes.includes("Basic")).length) {
+                    finalBooster.push({cards: arr.slice(0,1)});
+                    break;
+                } 
+                // if array rarity = "common" remove basic lands and truncate array to expected size
+                else {
+                    finalBooster.push({cards: arr.filter(card => !card.supertypes.includes("Basic")).slice(0,10)});
+                    break;
+                }
+            default:
+                finalBooster.push({cards: arr});
+        }
+    });
+
+    return finalBooster;
 };
