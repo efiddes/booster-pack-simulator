@@ -28,7 +28,7 @@ const Filter = () => {
                             onChange={() => setBoosterSet(set)}
                             defaultChecked={boosterSet === set}
                         />
-                        <i className={"ss ss-" + set + " ss-4x"}></i>
+                        <i className={"ss ss-" + set + " ss-5x"}></i>
                     </label>
                 ))}
                 </div>
