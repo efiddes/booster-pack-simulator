@@ -11,7 +11,19 @@
   gap: 1rem;
   grid-template-columns: 5fr 1.5fr;
   grid-auto-rows: auto;
-  background: white;
+  color: white;
+  background-color: #347092;
+  background-image:
+  linear-gradient(90deg,  
+    transparent 0 77%, 
+    #050F17 0),
+  radial-gradient(
+    circle at left,
+    #347092,
+    #063858,
+    #042439,
+    #050F17
+  );
   height: 100vh;
 }
 
@@ -19,14 +31,45 @@ header, footer {
   display: flex;
   align-items: center;
   min-height: 50px;
-  background-color: lightslategray;
   grid-column: span 2;
+  padding: 0 1rem;
 }
 
-footer {
-  justify-content: center;
+h2 {
+  font-size: 2rem;
+  color: #c8371b;
+  font-weight: 900;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: smaller;
+  list-style: none;
+  align-items: baseline;
+}
+
+.footer a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #c8371b;
+}
+
+.react-logo {
+  display: inline-block;
+  max-height: 20px;
+  vertical-align: bottom;
+  padding: 0 3px;
+}
+
+.react {
+  color: #61dafb;
 }
 
 .filters {
     grid-area: 2 / 2 / span 1;
+    background-color: #050F17;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
 }
