@@ -50,6 +50,13 @@ h2 {
   align-items: baseline;
 }
 
+@media screen and (max-width: 598px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
 .footer a {
   font-weight: bold;
   text-decoration: none;
