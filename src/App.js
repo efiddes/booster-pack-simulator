@@ -22,17 +22,17 @@ function App() {
         </LoadingContextProvider>
         </BoosterContextProvider>
         <footer>
-            <ul class="footer">
+            <ul className="footer">
                 <li>By <b>Ethan Fiddes</b></li>
                 <li>
                     Built with: 
-                    <img className="react-logo" alt="built with React" src={reactLogo}/>
-                    <a href="https://reactjs.org" target="_blank">
+                    <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+                        <img className="react-logo" alt="built with React" src={reactLogo}/>
                         <span className="react">React</span>
                     </a> 
                 </li>
                 <li>
-                    Data provided from <a href="https://docs.magicthegathering.io/" target="_blank">Magic: The Gathering API</a>
+                    Data provided from <a href="https://docs.magicthegathering.io/" target="_blank" rel="noopener noreferrer">Magic: The Gathering API</a>
                 </li>
             </ul>
         </footer>
