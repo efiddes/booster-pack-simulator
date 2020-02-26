@@ -32,6 +32,12 @@
   text-align: center;
 }
 
+@media screen and (max-width: 730px) {
+  .filter-set {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* HIDE RADIO */
 [type="radio"] { 
   position: absolute;
