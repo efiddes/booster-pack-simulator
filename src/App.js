@@ -25,7 +25,7 @@ function App() {
             <ul className="footer">
                 <li>By <b>Ethan Fiddes</b></li>
                 <li>
-                    Built with: 
+                    Built with
                     <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
                         <img className="react-logo" alt="built with React" src={reactLogo}/>
                         <span className="react">React</span>
