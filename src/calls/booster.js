@@ -46,8 +46,8 @@ export const useGenerateCards = (boosterPack, dependencies) => {
 
     // fetch('https://api.magicthegathering.io/v1/cards?set=eld&rarity=$rare&pageSize=1&random=true&contains=imageUrl');
     useEffect(() => {
-        setIsLoading(true);
         if (Array.isArray(urls) && urls.length) {
+            setIsLoading(true);
             (async function getCards() {
                 Promise.all(urls.map(url =>
                     fetch(url)
