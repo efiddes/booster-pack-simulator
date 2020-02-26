@@ -24,7 +24,7 @@
     #042439,
     #050F17
   );
-  height: 100vh;
+  min-height: 100vh;
 }
 
 header, footer {
