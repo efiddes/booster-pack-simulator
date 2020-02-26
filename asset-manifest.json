@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/booster-pack-simulator/static/css/main.5923c70b.chunk.css",
-    "main.js": "/booster-pack-simulator/static/js/main.42403755.chunk.js",
-    "main.js.map": "/booster-pack-simulator/static/js/main.42403755.chunk.js.map",
+    "main.js": "/booster-pack-simulator/static/js/main.c9ad6b0d.chunk.js",
+    "main.js.map": "/booster-pack-simulator/static/js/main.c9ad6b0d.chunk.js.map",
     "runtime-main.js": "/booster-pack-simulator/static/js/runtime-main.e6bd7cd4.js",
     "runtime-main.js.map": "/booster-pack-simulator/static/js/runtime-main.e6bd7cd4.js.map",
     "static/js/2.1b049d7a.chunk.js": "/booster-pack-simulator/static/js/2.1b049d7a.chunk.js",
     "static/js/2.1b049d7a.chunk.js.map": "/booster-pack-simulator/static/js/2.1b049d7a.chunk.js.map",
     "index.html": "/booster-pack-simulator/index.html",
-    "precache-manifest.0dc01c4985cac5770d456469fdd94650.js": "/booster-pack-simulator/precache-manifest.0dc01c4985cac5770d456469fdd94650.js",
+    "precache-manifest.579668b24c17774cd62e73a08075cb7d.js": "/booster-pack-simulator/precache-manifest.579668b24c17774cd62e73a08075cb7d.js",
     "service-worker.js": "/booster-pack-simulator/service-worker.js",
     "static/css/main.5923c70b.chunk.css.map": "/booster-pack-simulator/static/css/main.5923c70b.chunk.css.map",
     "static/js/2.1b049d7a.chunk.js.LICENSE": "/booster-pack-simulator/static/js/2.1b049d7a.chunk.js.LICENSE",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.e6bd7cd4.js",
     "static/js/2.1b049d7a.chunk.js",
     "static/css/main.5923c70b.chunk.css",
-    "static/js/main.42403755.chunk.js"
+    "static/js/main.c9ad6b0d.chunk.js"
   ]
 }

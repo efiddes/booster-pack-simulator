@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2a6a4c917274d09f7f4cdef10e99c04d",
+    "revision": "5b7910d687ae6eb23f065a2cd0595862",
     "url": "/booster-pack-simulator/index.html"
   },
   {
-    "revision": "e934749e32d729b9486e",
+    "revision": "cf59342502bc1b9c30b8",
     "url": "/booster-pack-simulator/static/css/main.5923c70b.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/booster-pack-simulator/static/js/2.1b049d7a.chunk.js.LICENSE"
   },
   {
-    "revision": "e934749e32d729b9486e",
-    "url": "/booster-pack-simulator/static/js/main.42403755.chunk.js"
+    "revision": "cf59342502bc1b9c30b8",
+    "url": "/booster-pack-simulator/static/js/main.c9ad6b0d.chunk.js"
   },
   {
     "revision": "0ebfd88b780d1f68b3ec",
