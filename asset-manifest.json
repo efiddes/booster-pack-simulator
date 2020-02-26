@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/booster-pack-simulator/static/css/main.d3825890.chunk.css",
+    "main.css": "/booster-pack-simulator/static/css/main.1e0268c1.chunk.css",
     "main.js": "/booster-pack-simulator/static/js/main.42403755.chunk.js",
     "main.js.map": "/booster-pack-simulator/static/js/main.42403755.chunk.js.map",
     "runtime-main.js": "/booster-pack-simulator/static/js/runtime-main.e6bd7cd4.js",
@@ -8,16 +8,16 @@
     "static/js/2.1b049d7a.chunk.js": "/booster-pack-simulator/static/js/2.1b049d7a.chunk.js",
     "static/js/2.1b049d7a.chunk.js.map": "/booster-pack-simulator/static/js/2.1b049d7a.chunk.js.map",
     "index.html": "/booster-pack-simulator/index.html",
-    "precache-manifest.e010abc89f77ada656a329f46d81a50e.js": "/booster-pack-simulator/precache-manifest.e010abc89f77ada656a329f46d81a50e.js",
+    "precache-manifest.19397f5905e47dd6be0d2a1e86c4071f.js": "/booster-pack-simulator/precache-manifest.19397f5905e47dd6be0d2a1e86c4071f.js",
     "service-worker.js": "/booster-pack-simulator/service-worker.js",
-    "static/css/main.d3825890.chunk.css.map": "/booster-pack-simulator/static/css/main.d3825890.chunk.css.map",
+    "static/css/main.1e0268c1.chunk.css.map": "/booster-pack-simulator/static/css/main.1e0268c1.chunk.css.map",
     "static/js/2.1b049d7a.chunk.js.LICENSE": "/booster-pack-simulator/static/js/2.1b049d7a.chunk.js.LICENSE",
     "static/media/mtg-back.jpg": "/booster-pack-simulator/static/media/mtg-back.dd611d53.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.e6bd7cd4.js",
     "static/js/2.1b049d7a.chunk.js",
-    "static/css/main.d3825890.chunk.css",
+    "static/css/main.1e0268c1.chunk.css",
     "static/js/main.42403755.chunk.js"
   ]
 }
