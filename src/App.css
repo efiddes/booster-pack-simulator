@@ -80,3 +80,24 @@ h2 {
     margin-top: -1rem;
     margin-bottom: -1rem;
 }
+
+@media screen and (max-width: 730px) {
+  .App {
+    grid-template-columns: 1fr;
+    background-image:
+    radial-gradient(
+      circle at center,
+      #347092,
+      #063858,
+      #042439,
+      #050F17
+    );
+  }
+  header, footer {
+    grid-column: span 1;
+  }
+  .filters {
+    margin: 0;
+    grid-area: 2 / 1 / span 1;
+  }
+}
