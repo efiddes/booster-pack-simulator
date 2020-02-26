@@ -8,6 +8,7 @@
   transition: transform 1s ease-in-out;
   transform-style: preserve-3d;
   perspective: 900px;
+  max-height: 330px;
 }
 
 @media only screen and (max-width: 1659px), (max-height: 796px) {
